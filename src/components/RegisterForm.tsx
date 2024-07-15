@@ -65,7 +65,7 @@ function RegisterForm() {
               control={form.control}
               name="first_name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="grow">
                   <FormLabel>First Name</FormLabel>
                   <FormControl>
                     <Input {...field} className="border-slate-300" />
@@ -78,7 +78,7 @@ function RegisterForm() {
               control={form.control}
               name="last_name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="grow">
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
                     <Input {...field} className="border-slate-300" />

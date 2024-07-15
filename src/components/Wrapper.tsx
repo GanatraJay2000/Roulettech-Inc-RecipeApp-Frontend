@@ -8,7 +8,7 @@ function Wrapper({
   className?: string;
 }) {
   return (
-    <div className={cn("md:w-1/3 md:mx-auto m-5 md:my-10", className)}>
+    <div className={cn("lg:w-1/3 md:w-1/2 md:mx-auto m-5 md:my-10", className)}>
       {children}
     </div>
   );
