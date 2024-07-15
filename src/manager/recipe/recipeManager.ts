@@ -1,5 +1,5 @@
 import ROUTES from "../../config/constants/apiRoutes";
-import { TRecipe } from "./recipeTypes";
+// import { TRecipe } from "./recipeTypes";
 import { axiosInstance } from "../axiosInstance";
 import GLOBAL from "../../config/constants/global";
 import { getData } from "../../lib/getterSetter";
@@ -19,13 +19,13 @@ export const generateRecipeManager = {
       },
     });
   },
-  createRecipe: async (recipe: TRecipe) => {
-    return undefined;
-  },
-  updateRecipe: async (id: string, recipe: TRecipe) => {
-    return undefined;
-  },
-  deleteRecipe: async (id: string) => {
-    return undefined;
-  },
+  // createRecipe: async (recipe: TRecipe) => {
+  //   return undefined;
+  // },
+  // updateRecipe: async (id: string, recipe: TRecipe) => {
+  //   return undefined;
+  // },
+  // deleteRecipe: async (id: string) => {
+  //   return undefined;
+  // },
 };

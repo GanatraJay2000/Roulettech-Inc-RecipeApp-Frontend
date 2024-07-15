@@ -1,5 +1,4 @@
-import { login, register } from "../manager/auth/authServices";
-import { useAuth } from "../manager/auth/authProvider";
+import { register } from "../manager/auth/authServices";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
