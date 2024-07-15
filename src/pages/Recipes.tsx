@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import QUERY from "../config/constants/queryConstants";
 import { getAllRecipes } from "../manager/recipe/recipeServices";
 import { LuLogOut } from "react-icons/lu";
-import Card from "../components/Card";
 import Wrapper from "../components/Wrapper";
 import RecipeCard from "../components/RecipeCard";
 
