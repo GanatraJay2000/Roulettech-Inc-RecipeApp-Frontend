@@ -13,7 +13,6 @@ function Recipe() {
     queryKey: [QUERY.RECIPE, id],
     queryFn: () => getRecipe(id!),
   });
-
   return (
     <Wrapper>
       <a
@@ -23,7 +22,13 @@ function Recipe() {
         <IoChevronBackOutline />
         Back
       </a>
-      {query.isLoading ? "Loading..." : <RecipeCard recipe={query.data!} />}
+      {query.isLoading ? (
+        "Loading..."
+      ) : query.isError ? (
+        <p>Recipe not found</p>
+      ) : (
+        <RecipeCard recipe={query.data!} />
+      )}
     </Wrapper>
   );
 }
