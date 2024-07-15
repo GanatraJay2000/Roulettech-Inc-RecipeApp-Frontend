@@ -1,16 +1,17 @@
 import RegisterForm from "../components/RegisterForm";
+import Wrapper from "../components/Wrapper";
 
 function Register() {
   return (
     <>
-      <div className="w-1/3 mx-auto my-10">
+      <Wrapper>
         <RegisterForm />
 
         <div className="flex justify-between underline">
           <a href="/">Already have an acount?</a>
           <a href="/about">About</a>
         </div>
-      </div>
+      </Wrapper>
     </>
   );
 }

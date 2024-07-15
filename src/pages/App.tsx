@@ -1,15 +1,16 @@
 import LoginForm from "../components/LoginForm";
+import Wrapper from "../components/Wrapper";
 
 function App() {
   return (
     <>
-      <div className="w-1/3 mx-auto my-10">
+      <Wrapper>
         <LoginForm />
         <div className="flex justify-between underline">
           <a href="/register">Register a new acount!</a>
           <a href="/about">About</a>
         </div>
-      </div>
+      </Wrapper>
     </>
   );
 }

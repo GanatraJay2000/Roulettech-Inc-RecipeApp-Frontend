@@ -1,11 +1,12 @@
 import { IoChevronBackOutline } from "react-icons/io5";
 import Card from "../components/Card";
 import { useNavigate } from "react-router-dom";
+import Wrapper from "../components/Wrapper";
 
 function About() {
   const navigate = useNavigate();
   return (
-    <div className="w-1/3 mx-auto my-10">
+    <Wrapper>
       <a
         href="#"
         onClick={() => navigate(-1)}
@@ -31,7 +32,7 @@ function About() {
           hosting and EC2 for backend deployment.
         </p>
       </Card>
-    </div>
+    </Wrapper>
   );
 }
 
