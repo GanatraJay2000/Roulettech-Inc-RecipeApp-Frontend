@@ -10,6 +10,8 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
+    env:
+      VITE_API_ROUTE_URL: ${{ secrets.API_ROUTE_URL }}
 
     steps:
       - name: Checkout
