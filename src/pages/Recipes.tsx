@@ -30,7 +30,9 @@ function Recipes() {
               <RecipeCard recipe={recipe} />
             </a>
           ))}
-      {query.data?.length === 0 && <p>No recipes found</p>}
+      {query.data?.length === 0 && (
+        <p className="text-center">No recipes found</p>
+      )}
     </Wrapper>
   );
 }
