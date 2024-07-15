@@ -13,7 +13,7 @@ export const generateRecipeManager = {
     });
   },
   getRecipe: async (id: string) => {
-    return axiosInstance.get(ROUTES.RECIPES + id, {
+    return axiosInstance.get(ROUTES.RECIPE(id), {
       headers: {
         Authorization: `Bearer ${getData(GLOBAL.AUTH)?.access}`,
       },

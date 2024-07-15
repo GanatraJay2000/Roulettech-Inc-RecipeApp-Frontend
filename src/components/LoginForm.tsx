@@ -56,7 +56,7 @@ function LoginForm() {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} className="border-slate-300" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -69,7 +69,11 @@ function LoginForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" {...field} />
+                  <Input
+                    type="password"
+                    {...field}
+                    className="border-slate-300"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

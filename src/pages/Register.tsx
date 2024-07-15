@@ -6,7 +6,7 @@ function Register() {
       <div className="w-1/3 mx-auto my-10">
         <RegisterForm />
 
-        <div className="flex justify-between text-blue-500">
+        <div className="flex justify-between underline">
           <a href="/">Already have an acount?</a>
           <a href="/about">About</a>
         </div>
