@@ -71,3 +71,8 @@
 body {
   @apply bg-gray-300;
 }
+
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable !important;
+}

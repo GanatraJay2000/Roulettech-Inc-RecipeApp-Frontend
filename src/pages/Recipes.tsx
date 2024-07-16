@@ -4,6 +4,7 @@ import { getAllRecipes } from "../manager/recipe/recipeServices";
 import { LuLogOut } from "react-icons/lu";
 import Wrapper from "../components/Wrapper";
 import RecipeCard from "../components/RecipeCard";
+import RecipeCardAction from "../components/RecipeCardAction";
 
 function Recipes() {
   const query = useQuery({
@@ -19,13 +20,14 @@ function Recipes() {
       >
         Logout <LuLogOut />
       </a>
+      <RecipeCardAction />
       {query.isLoading
         ? "Loading..."
         : query.data?.map((recipe) => (
             <a
               href={`/recipes/${recipe.id}`}
               key={recipe.id}
-              className="block mb-5"
+              className="rounded-lg block mb-5 hover:outline hover:outline-offset-2 hover:outline-ring"
             >
               <RecipeCard recipe={recipe} />
             </a>

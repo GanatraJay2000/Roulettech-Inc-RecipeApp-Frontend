@@ -1,9 +1,22 @@
 import Card from "./Card";
 import { TRecipe } from "../manager/recipe/recipeTypes";
-
-function RecipeCard({ recipe }: { recipe: TRecipe }) {
+import { MdDelete } from "react-icons/md";
+function RecipeCard({
+  recipe,
+  onDelete,
+}: {
+  recipe: TRecipe;
+  onDelete?: () => void;
+}) {
   return (
-    <Card key={recipe.title}>
+    <Card key={recipe.title} className="relative">
+      {onDelete && (
+        <MdDelete
+          onClick={() => onDelete()}
+          className="absolute top-8 right-8 font-bold text-lg hover:text-red-500 cursor-pointer"
+        />
+      )}
+
       <h1 className="text-3xl font-semibold">{recipe.title}</h1>
       <p className="mt-2">
         <span className="font-medium">Ingredients: </span>

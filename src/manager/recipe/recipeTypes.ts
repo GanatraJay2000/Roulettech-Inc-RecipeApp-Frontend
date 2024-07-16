@@ -8,3 +8,10 @@ export type TRecipe = {
   updated_at: string;
   user: number;
 };
+
+export type TRecipeDTO = {
+  title: string;
+  ingredients: string;
+  time_required: number;
+  instructions: string;
+};

@@ -3,6 +3,7 @@ import ROUTES from "../../config/constants/apiRoutes";
 import { axiosInstance } from "../axiosInstance";
 import GLOBAL from "../../config/constants/global";
 import { getData } from "../../lib/getterSetter";
+import { TRecipeDTO } from "./recipeTypes";
 
 export const generateRecipeManager = {
   getRecipes: async () => {
@@ -12,6 +13,7 @@ export const generateRecipeManager = {
       },
     });
   },
+
   getRecipe: async (id: string) => {
     return axiosInstance.get(ROUTES.RECIPE(id), {
       headers: {
@@ -19,13 +21,28 @@ export const generateRecipeManager = {
       },
     });
   },
-  // createRecipe: async (recipe: TRecipe) => {
-  //   return undefined;
-  // },
-  // updateRecipe: async (id: string, recipe: TRecipe) => {
-  //   return undefined;
-  // },
-  // deleteRecipe: async (id: string) => {
-  //   return undefined;
-  // },
+
+  createRecipe: async (recipe: TRecipeDTO) => {
+    return axiosInstance.post(ROUTES.RECIPES, recipe, {
+      headers: {
+        Authorization: `Bearer ${getData(GLOBAL.AUTH)?.access}`,
+      },
+    });
+  },
+
+  updateRecipe: async (id: string, recipe: TRecipeDTO) => {
+    return axiosInstance.put(ROUTES.RECIPE(id), recipe, {
+      headers: {
+        Authorization: `Bearer ${getData(GLOBAL.AUTH)?.access}`,
+      },
+    });
+  },
+
+  deleteRecipe: async (id: string) => {
+    return axiosInstance.delete(ROUTES.RECIPE(id), {
+      headers: {
+        Authorization: `Bearer ${getData(GLOBAL.AUTH)?.access}`,
+      },
+    });
+  },
 };
