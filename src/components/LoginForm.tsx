@@ -3,7 +3,7 @@ import { useAuth } from "../manager/auth/authProvider";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { LuLoader2 } from "react-icons/lu";
 import { Button } from "../components/ui/button";
 import {
   Form,
@@ -19,6 +19,7 @@ import { useMutation } from "@tanstack/react-query";
 import Card from "./Card";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { AxiosError, AxiosResponse } from "axios";
+import { cn } from "../lib/utils";
 
 const formSchema = z.object({
   username: z.string().min(2),
@@ -94,7 +95,12 @@ function LoginForm() {
             )}
           />
           <Button type="submit" className="px-7">
-            Login
+            Login{" "}
+            <LuLoader2
+              className={cn(`hidden ml-2 animate-spin`, {
+                block: mutation.isPending,
+              })}
+            />
           </Button>
         </form>
       </Form>
