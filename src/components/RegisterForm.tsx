@@ -16,6 +16,9 @@ import { Input } from "../components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import Card from "./Card";
+import { LuLoader2 } from "react-icons/lu";
+import { cn } from "../lib/utils";
+import ErrorAlert from "./ErrorAlert";
 
 const formSchema = z
   .object({
@@ -57,7 +60,7 @@ function RegisterForm() {
   return (
     <Card>
       <h1 className="text-3xl font-bold mb-5">Register</h1>
-
+      <ErrorAlert<typeof mutation> mutation={mutation} />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(registerFn)} className="space-y-3">
           <div className="flex flex-col md:flex-row gap-5">
@@ -150,6 +153,11 @@ function RegisterForm() {
           />
           <Button type="submit" className="px-7">
             Register
+            <LuLoader2
+              className={cn(`hidden ml-2 animate-spin`, {
+                block: mutation.isPending,
+              })}
+            />
           </Button>
         </form>
       </Form>
