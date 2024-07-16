@@ -26,10 +26,15 @@ function About() {
           This app features user authentication, allowing users to manage and
           display their recipes based on individual accounts.
         </p>
+        <p className="text-justify mb-5 text-red-500">
+          !! This is just an MVP. It does not have proper features like
+          success/error messages. !!
+        </p>
         <p className="text-justify mb-5">
           The frontend is built using React.js, the backend is powered by Django
-          and the entire application is deployed on AWS -- S3 for frontend
-          hosting and EC2 for backend deployment.
+          and the entire application is deployed on AWS via GitHub Actions CI/CD
+          pipeline -- S3 with Cloudfront for frontend hosting and Docker with
+          EC2 for backend deployment.
         </p>
       </Card>
     </Wrapper>
