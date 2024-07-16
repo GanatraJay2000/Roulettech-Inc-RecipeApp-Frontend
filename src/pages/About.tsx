@@ -17,6 +17,10 @@ function About() {
       </a>
       <Card>
         <h1 className="text-3xl font-semibold mb-8">About the Project</h1>
+
+        <p className="mb-5 text-justify text-amber-500">
+          Use in HTTP! Does not support HTTPS!!!
+        </p>
         <p className="mb-5 text-justify">
           For the team at Roulettech, to showcase my skills, I have developed a
           demo recipe CRUD app as part of my application for the Kangacook

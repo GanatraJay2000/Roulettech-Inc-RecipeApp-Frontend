@@ -17,6 +17,8 @@ import { Input } from "../components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import Card from "./Card";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import { AxiosError, AxiosResponse } from "axios";
 
 const formSchema = z.object({
   username: z.string().min(2),
@@ -46,7 +48,19 @@ function LoginForm() {
   return (
     <Card>
       <h1 className="text-3xl font-bold mb-5">Login</h1>
-
+      {mutation.isError && (
+        <Alert variant="destructive" className="my-3">
+          <AlertTitle>{mutation.error.message}</AlertTitle>
+          <AlertDescription>
+            {
+              (
+                (mutation.error as AxiosError<{ details: string }>)
+                  ?.response as AxiosResponse
+              )?.data?.detail
+            }
+          </AlertDescription>
+        </Alert>
+      )}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(loginFn)} className="space-y-3">
           <FormField
