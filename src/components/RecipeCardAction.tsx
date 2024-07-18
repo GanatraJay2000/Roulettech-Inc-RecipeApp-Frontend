@@ -30,7 +30,13 @@ const formSchema = z.object({
   instructions: z.string().min(2),
 });
 
-function RecipeCardAction({ recipe }: { recipe?: TRecipe }) {
+function RecipeCardAction({
+  recipe,
+  children,
+}: {
+  recipe?: TRecipe;
+  children?: React.ReactNode;
+}) {
   const navigate = useNavigate();
   const createMutation = useMutation({
     mutationFn: createRecipe,
@@ -77,13 +83,9 @@ function RecipeCardAction({ recipe }: { recipe?: TRecipe }) {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1" className="border-0 mb-10">
-        <AccordionTrigger className="p-0">
-          <h1 className="text-3xl font-semibold">
-            {recipe ? "Edit" : "Add"} Recipe
-          </h1>
-        </AccordionTrigger>
+        {children}
         <AccordionContent className="py-0 px-1">
-          <Card className="mb-5 mt-5">
+          <Card className="mb-5 mt-2">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}

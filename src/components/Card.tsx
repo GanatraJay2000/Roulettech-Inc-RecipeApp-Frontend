@@ -9,7 +9,10 @@ function Card({
 }) {
   return (
     <div
-      className={cn("shadow-sm border rounded-lg p-6 mb-2 bg-white", className)}
+      className={cn(
+        "shadow-sm border rounded-lg p-6 mb-2 bg-white overflow-hidden",
+        className
+      )}
     >
       {children}
     </div>

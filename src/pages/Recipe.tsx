@@ -7,6 +7,8 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import QUERY from "../config/constants/queryConstants";
 
 import RecipeCardAction from "../components/RecipeCardAction";
+import { Button } from "../components/ui/button";
+import { AccordionTrigger } from "../components/ui/accordion";
 
 function Recipe() {
   const { id } = useParams<{ id: string }>();
@@ -29,7 +31,7 @@ function Recipe() {
   }
 
   return (
-    <Wrapper>
+    <Wrapper className="lg:w-7/12">
       <a
         href="/recipes"
         className="text-xl font-medium mb-3 flex items-center gap-2"
@@ -45,7 +47,13 @@ function Recipe() {
         query.data && (
           <>
             <RecipeCard recipe={query.data!} onDelete={onDelete} />
-            <RecipeCardAction recipe={query.data} />
+            <RecipeCardAction recipe={query.data}>
+              <AccordionTrigger className="p-0 trigger">
+                <Button variant="outline" className="w-full">
+                  Edit
+                </Button>
+              </AccordionTrigger>
+            </RecipeCardAction>
           </>
         )
       )}

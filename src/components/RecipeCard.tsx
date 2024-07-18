@@ -13,7 +13,7 @@ function RecipeCard({
       {onDelete && (
         <MdDelete
           onClick={() => onDelete()}
-          className="absolute top-8 right-8 font-bold text-lg hover:text-red-500 cursor-pointer"
+          className="absolute top-8 right-8 font-bold text-2xl hover:text-red-500 cursor-pointer"
         />
       )}
 

@@ -69,10 +69,14 @@
 }
 
 body {
-  @apply bg-gray-300;
+  @apply bg-green-300;
 }
 
 html {
   overflow-y: auto;
   scrollbar-gutter: stable !important;
+}
+
+.trigger button + svg {
+  display: none;
 }

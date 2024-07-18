@@ -5,6 +5,7 @@ import { LuLogOut } from "react-icons/lu";
 import Wrapper from "../components/Wrapper";
 import RecipeCard from "../components/RecipeCard";
 import RecipeCardAction from "../components/RecipeCardAction";
+import { AccordionTrigger } from "../components/ui/accordion";
 
 function Recipes() {
   const query = useQuery({
@@ -20,7 +21,11 @@ function Recipes() {
       >
         Logout <LuLogOut />
       </a>
-      <RecipeCardAction />
+      <RecipeCardAction>
+        <AccordionTrigger className="p-0">
+          <h1 className="text-3xl font-semibold">Add Recipe</h1>
+        </AccordionTrigger>
+      </RecipeCardAction>
       {query.isLoading
         ? "Loading..."
         : query.data?.map((recipe) => (

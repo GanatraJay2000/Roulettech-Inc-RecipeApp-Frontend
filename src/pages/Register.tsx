@@ -9,9 +9,7 @@ function Register() {
 
         <div className="flex justify-between underline">
           <a href="/">Already have an acount?</a>
-          <a href="/about" className="text-red-500">
-            Read This
-          </a>
+          <a href="/about">Read This!!</a>
         </div>
       </Wrapper>
     </>

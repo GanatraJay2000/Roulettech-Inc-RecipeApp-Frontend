@@ -9,7 +9,13 @@ function About() {
     <Wrapper>
       <a
         href="#"
-        onClick={() => navigate(-1)}
+        onClick={() => {
+          try {
+            navigate(-1);
+          } catch {
+            navigate("/");
+          }
+        }}
         className="text-xl font-medium mb-3 flex items-center gap-2"
       >
         <IoChevronBackOutline />
@@ -31,8 +37,8 @@ function About() {
           display their recipes based on individual accounts.
         </p>
         <p className="text-justify mb-5 text-red-500">
-          !! This is just an MVP. It does not have proper features like
-          success/error messages. !!
+          !! This is just an MVP. It does not have perfect success/error
+          messages. !!
         </p>
         <p className="text-justify mb-5">
           The frontend is built using React.js, the backend is powered by Django
