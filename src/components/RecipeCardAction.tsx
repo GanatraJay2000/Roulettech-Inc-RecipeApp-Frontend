@@ -26,7 +26,7 @@ import { createRecipe, updateRecipe } from "../manager/recipe/recipeServices";
 const formSchema = z.object({
   title: z.string().min(2),
   ingredients: z.string().min(2),
-  time_required: z.string().min(2),
+  time_required: z.string(),
   instructions: z.string().min(2),
 });
 
