@@ -3,12 +3,7 @@ import Card from "./Card";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
+import { Accordion, AccordionContent, AccordionItem } from "./ui/accordion";
 import { Button } from "./ui/button";
 import {
   Form,
